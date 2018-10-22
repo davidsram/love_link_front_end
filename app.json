@@ -1,0 +1,17 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/detail/detail",
+    "pages/search/search",
+    "pages/know/know",
+    "pages/logs/logs",
+    "pages/login/login"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "爱链",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  }
+}

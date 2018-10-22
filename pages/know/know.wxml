@@ -1,0 +1,10 @@
+<!-- <scroll-view style='width:100%;height:100%' catchtouchmove="ture">
+  <view class='titleBar'>
+    <image src='/images/back1.png' class='iconBar' bindtap='goback'></image>
+    <text>爱链</text>
+  </view>
+  <view class="page">
+  </view>
+</scroll-view> -->
+<!-- 需要填写链接的地址，需要在微信公众平台将公众号和小程序关联，否则需要在微信公众平台将链接地址列入白名单 -->
+<web-view src='https://mp.weixin.qq.com/s?__biz=Mzg4MDAxMzczMg==&mid=2247483658&idx=1&sn=83cca5e663f37b980789678560c615a7&chksm=cf7af9c1f80d70d7c0c81bc02b0e08d0240d0825d314ffc0c5337a6fe1446db9c6200f6d6070&scene=0&ascene=7&devicetype=android-23&version=26060739&nettype=WIFI&abtest_cookie=BgABAAgACgALAA0AEwAUAAYAn4YeACWXHgBZmR4AhJkeAIiZHgCLmR4AAAA%3D&lang=zh_CN&pass_ticket=9HocgLzM3be%2Fpe6kd819p8HkQcqimb5FXY12J9SZJUMEOke4436ZYEiRyiP%2FyYAV&wx_header=1'></web-view>

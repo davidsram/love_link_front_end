@@ -1,0 +1,18 @@
+/* pages/login/login.wxss */
+page{
+  background-color:pink;
+}
+.titleBar {
+  background: #fff;
+  text-align: center;
+  padding-top: 60rpx;
+  height: 70rpx;
+  font-size: 38rpx;
+  font-family: fantasy;
+  font-weight: 600;
+}
+.word{
+  display: absolute;
+  padding-top: 50px;
+  text-align: center;
+}

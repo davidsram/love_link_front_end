@@ -1,0 +1,15 @@
+<!--index.wxml-->
+
+  <view class='titleBar'>
+
+    <text>爱链</text>
+  </view>
+  <view  class='word'>
+  <text>获得微信名作为上链信息</text></view>
+<button 
+    wx:if="{{canIUse}}" 
+    open-type="getUserInfo" 
+    bindgetuserinfo="bindGetUserInfo"
+>授权登录</button>
+<image src='/images/11.png' class='bg-img'></image>
+ <view class='bg-page' catchtouchmove='true' wx:if='{{isAd}}'></view>

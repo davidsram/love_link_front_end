@@ -1,0 +1,61 @@
+<!--pages/detail/detail.wxml-->
+<scroll-view style='width:100%;height:100%' catchtouchmove="ture">
+  <view class='titleBar'>
+    <image src='/images/back1.png' class='iconBar' bindtap='goback'></image>
+    <!-- 分享图片 -->
+    <image src='/images/share1.png' class='iconBar-share'></image>
+    <!-- 实际分享按钮 -->
+    <button open-type='share' class='share-btn'></button>
+    <!-- 保存按钮图片 -->
+    <image src='/images/save.png' class='iconBar-save'></image>
+    <!-- 实际保存按钮 -->
+     <button class='save-btn' bindtap='bindSave'></button> 
+    <text class='txt1'>转发给朋友</text>
+    <text class='txt2'>保存到相册</text>
+    <text>爱链</text>
+
+  </view>
+
+  <view class="page">
+    <view class="page__bd">
+      <view class="weui-tab">
+        <!-- 创建誓言 -->
+        <view class="weui-tab__panel" catchtouchmove="ture">
+          <view class="panel1" hidden="{{activeIndex != 0}}" style='background:#fff'>
+            <!-- 誓言信息 -->
+             <image src='{{imageUrl}}' class='img1'></image>
+              <!-- <image src='{{pathtest}}' class='img1'></image> -->
+             <text class='icontent'>{{icontent}}</text>
+             <view class='username'>——<open-data type="userNickName" lang='zh_CN'></open-data></view>
+            <!-- <view class='username'>——{{username}}</view>  -->
+            <!-- <image src='/images/4.png' class='img2'></image> -->
+            <!-- 下部信息 -->
+            <view class='info' bindtap='tapKnow'>点击此处了解如何在区块链中查询？</view>
+            <view class='bottom-view'>
+              <view>
+                <!-- 用户头像 -->
+                <view class='avatar-wrap'><open-data type="userAvatarUrl"></open-data></view>
+                <view class='bottom-view-content'>
+                <view>恭喜你，<text style='color: #dd4575;'>{{username}}</text>！</view>
+                <!-- <view>恭喜你，<open-data type="userNickName" lang='zh_CN' style='color:#dd4575'></open-data>！</view> -->
+                <view>你是第<text style='color: #dd4575;'>{{pNum}}</text>个把誓言上链的人。</view>
+                <!-- <text>你的交易号是：<text style='color: #dd4575;' selectable='true'>{{pyNum}}</text></text> -->
+                <view style='word-wrap:break-word; word-break:break-all; '>你的交易号是： <text style='color: #dd4575; ' selectable='true' bindlongtap='copy'>{{pyNum}}</text></view>
+                <view>将你的爱情作为礼物送给你的爱人。</view>
+               </view>
+                <image class='qrcode' src='/images/timg.jpg'></image>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+ <!-- <view wx:if='{{canvasOn}}'>
+<canvas canvas-id="shareCanvas" style="width:750rpx;height:1334rpx"></canvas>
+</view> -->
+
+<canvas style="width: 375px; height: 667px;position: fixed;top: -10000px;" canvas-id="myCanvas"  ></canvas>
+<!-- 
+<button class='bt' bindtap='click'>canvas绘图</button> -->
