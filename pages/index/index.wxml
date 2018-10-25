@@ -1,20 +1,88 @@
 <!--index.wxml-->
-  <form bindsubmit="bindFormSubmit">
-<view class='inputMoudle'>
-   <textarea  placeholder='誓言正文' maxlength='200' name='oathInput' auto-focus='true'></textarea>
+<scroll-view style='width:100%;height:100%' catchtouchmove="ture">
+  <view class='titleBar'>
+    <image src='/images/info.png' class='iconBar' bindtap='tapAd' style="transform:scale(1.2)"></image>
+    <text>爱链</text>
   </view>
+  <view class="page">
+    <view class="page__bd">
+      <view class="weui-tab">
+        <view class="weui-navbar">
+          <block wx:for="{{tabs}}" wx:key="*this">
+            <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+              <view class="weui-navbar__title" style='color:#9E9E9E'>{{item}}</view>
+            </view>
+          </block>
+          <view class="weui-navbar__slider" style="left: {{0}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+        </view>
+        <!-- 创建誓言 -->
+        <view class="weui-tab__panel" catchtouchmove="ture">
+          <view class="panel1" hidden="{{activeIndex != 0}}">
+            <view>
+              <view wx:if='{{!isAd}}'>
+                <textarea class='textarea1' fixed disabled="true"></textarea>
+                <textarea class='textarea2' fixed disabled="true"></textarea>
+                <textarea class='textarea3' maxlength='128' fixed value='{{words}}' bindfocus='onBindfocus' bindblur='onBindblur'contenteditable="true" ></textarea>
+                <!-- placeholder图片 留下你的誓言 -->
+                <image src='/images/7.png' class='placeholder' wx:if='{{isWords}}'></image>
+              </view>
+              <!-- 入链图片 付款按钮 提交按钮 -->
+              <image src='/images/2.png' class='rulian' bindtap='tapEnter'></image>
+              <!-- 同意条款 -->
+              <view class='agree'>
+                <checkbox class='agreeCheckbox' bindtap='tapAgree' checked='{{isCheck}}' style="transform:scale(0.85)"> </checkbox>
+                <text class="warnWord" >点击表示已阅读并同意</text>
+                <text bindtap='tapTk' style=" font-size:12.5px">《誓言服务条款》</text>
+              </view>
+            </view>
+          </view>
+          <!-- 查询誓言 -->
+          <view class="weui-tab__content" hidden="{{activeIndex != 1}}" catchtouchmove="ture">
+            <view class='wrap-sroll-table'>
+              <view catchtouchmove="ture" class='sroll-table'>
+                <view class='table'>
+                  <view class='thead'>
+                    <view class='th'>{{thead1}}</view>
+                    <!-- <view class='th'>{{thead2}}</view> -->
+                    <view class='th'>{{thead3}}</view>
+                  </view>
+                  <scroll-view scroll-y class='inner-scroll'>
+                    <view class='tbody' wx:for="{{listDataRam}}" wx:key="{{code}}" bindtap='queryitem'  data-id='{{index}}'  data-info='{{item}}' >
+                      <view class='tr'>{{item.oathTitle}}</view>
+                      <!-- <view class='tr'>{{item.blockNum}}</view> -->
+                      <view class='tr'>{{item.time}}</view>
+                    </view>
+                  </scroll-view>
+                </view>
+              </view>
+             
+              <!-- <image class='search-icon' src='/images/6.png' bindtap='searchOthers'  wx:if='{{isSearch}}'></image>
+              <image class='search-icon' src='/images/back.png' bindtap='backToPerson' wx:if='{{!isSearch}}'></image> -->
+               <!-- 返回按钮 -->
 
-  <view class='word'>
-<image class='wordimg' src='https://s1.ax1x.com/2018/06/26/PPmH9H.png'></image>
-</view>
+            </view>
+          </view>
+          <!-- 介绍页面 -->
+          <view class='welcome' wx:if='{{isAd}}'>
+            <!-- 顶部关闭栏 -->
+            <view class='top-bar'>
+              <view catchtap='tapClose'>
+                <image src='/images/close.png' class='closeIcon'></image>
+              </view>
+            </view>
+            <!-- 内容栏 -->
+            <view class="title {{isAgain?'title2':''}}">{{title}}</view>
+            <scroll-view class='content' scroll-y>{{content}}</scroll-view>
+            <image src='/images/11.png' class='bg-img'></image>
+          </view>
+          <!-- 白色背景 -->
+          <view class='bg-page' catchtouchmove='true' wx:if='{{isAd}}'></view>
+        </view>
 
- <button class='circle' bindtap='add_oath' form-type='submit' ><text class='add'>+</text></button> 
-  </form>
+        <!-- 条款页面 -->
 
- <!-- <view class='introWord'>  -->
-<checkbox-group class='intro' bindchange="listenCheckboxChange" style="transform:scale(0.8)">
-    <label style="display: flex;" >     
-    <checkbox value="ture"/>点击表示已阅读并同意</label>
-</checkbox-group>
-<text class='serlist' bindtap='gotoser'>《誓言服务条款》</text>
- <!-- </view>  -->
+      </view>
+    </view>
+  </view>
+ 
+</scroll-view>
