@@ -1,0 +1,36 @@
+/* pages/index/show.wxss */
+.imageFrame{
+  width: 100%;
+  margin-top: 10px;
+}
+ .oathview{
+ margin-top: 0px;
+ display:block;
+padding-left: 80px;
+padding-right: 80px;
+ white-space: pre-wrap;
+  text-align: center;
+} 
+.oathtext{
+
+ margin: 0 auto;
+ width: 300px;
+ word-break: break-all;
+ word-wrap: normal;
+ font-size: 30px;
+ font-style: italic;
+   /* border: 1px solid #FFF; background-color: #999; */
+}
+.name{
+  margin-top: 15px;
+  margin-left: 250px;
+}
+
+.info{display: flex;
+justify-content: center;
+margin-top: 50px;
+}
+.infoWord{
+  font-size: 15px;
+  color: gray;
+}

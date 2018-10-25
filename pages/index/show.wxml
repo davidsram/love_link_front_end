@@ -1,0 +1,7 @@
+<!--pages/index/show.wxml-->
+<image class='imageFrame'  src="{{imageUrl}}" mode='aspectFit'></image>
+<view class='oathview'>
+<text class='oathtext' >{{shiyan}}</text>
+</view>
+<view class='name'>——<open-data type="userNickName" lang='zh_CN'></open-data></view>
+<view class='info'><text class='infoWord'>日期：{{time}} 区块号：{{blockNum}}\n交易号:{{tensNum}}</text></view>
