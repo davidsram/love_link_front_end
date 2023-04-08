@@ -1,3 +1,2 @@
 # love link front end
-This repo records project love link front end code for wechat miniprogram <br/>
-The program is based on javaScript.
+The front-end code for the WeChat mini program of "Love Link" is saved in this repository.<Br> This program is developed in JavaScript.
